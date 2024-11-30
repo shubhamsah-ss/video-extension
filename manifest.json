@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Video Pause/Resume",
+  "version": "1.0",
+  "description": "Pauses videos on tab/window change and resumes them when the user returns.",
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "storage",
+    "scripting"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*", 
+        "https://*/*"
+      ],
+      "js": ["content.js"]
+    }
+  ],
+  "host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ]
+}
